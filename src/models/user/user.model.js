@@ -7,19 +7,23 @@ const {Schema} = mongoose;
 const UserSchema = new Schema({
     first_name: {
         type: String,
+        trim: true,
         required: 'Please Provide a first name'
     },
     last_name: {
         type: String,
+        trim: true,
         required: 'Please Provide a last name'
     },
     email: {
         type: String,
+        trim: true,
         required: 'Please Provide an email ',
         unique: true
     },
     password: {
         type: String,
+        trim: true,
         required: 'Please Provide a password'
     }
 
@@ -50,4 +54,5 @@ UserSchema.methods.responseObject = (/*flag = true*/)=>{
 //         process.env.SECRET, {expiresIn: '1d'});
 // }
 
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
+module.exports = User;

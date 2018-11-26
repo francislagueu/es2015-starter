@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "http-status": "registry:dt/http-status#0.2.1+20160510002910"
+  }
+}

@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import volleyball from 'volleyball';
 import mongoose from 'mongoose';
+import {ErrorHandler, NotFoundError} from './src/middleware/errors.middleware';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(volleyball);
 app.use(cors());
+
+app.use(NotFoundError);
+app.use(ErrorHandler);
 
 mongoose.connect(MONGO_URL, {useNewUrlParser: true}).then(()=>{
     console.log('Database connected successtully...');
