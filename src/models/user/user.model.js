@@ -40,8 +40,8 @@ UserSchema.methods.validatePassword = async (password)=>{
 }
  
 UserSchema.methods.responseObject = (/*flag = true*/)=>{
-    const {_id, first_name, last_name, email, created_at, updated_at} = this;
-    const response = {_id, first_name, last_name, email, created_at, updated_at};
+    const {_id, first_name, last_name, email, createdAt, updatedAt} = this;
+    const response = {_id, first_name, last_name, email, createdAt, updatedAt};
     // if(flag){
     //     response.token = token;
     // }
