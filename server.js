@@ -4,6 +4,7 @@ import cors from 'cors';
 import volleyball from 'volleyball';
 import mongoose from 'mongoose';
 import {ErrorHandler, NotFoundError} from './src/middleware/errors.middleware';
+import {UserRouter} from './src/routes/user.route';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,8 @@ app.use(volleyball);
 app.use(cors());
 
 import './src/passport/index';
+
+app.use('/users', UserRouter);
 
 app.use(NotFoundError);
 app.use(ErrorHandler);

@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 
 
-module.exports = {
-    Register:async(req, res, next)=>{
+
+   const Register = async(req, res, next)=>{
         try{
             const {email} = req.body;
             const result = await User.findOne({email}).exec();
@@ -18,8 +18,8 @@ module.exports = {
         }catch(err){
             next(err);
         }
-    },
-    Login: async (req, res, next)=>{
+    };
+    const Login = async (req, res, next)=>{
         passport.authenticate('local', {session: false}, (err, user, info)=>{
             try{
                 if(err || !user){
@@ -41,5 +41,6 @@ module.exports = {
             }
         })(req, res);
        
-    }
-}
+    };
+
+module.exports = {Register, Login};
