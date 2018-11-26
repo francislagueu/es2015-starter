@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import volleyball from 'volleyball';
@@ -14,6 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(volleyball);
 app.use(cors());
+
+import './src/passport/index';
 
 app.use(NotFoundError);
 app.use(ErrorHandler);
