@@ -6,7 +6,7 @@ const ValidateUser = (req, res, next)=>{
         first_name: Joi.string().required().trim(),
         last_name: Joi.string().required().trim(),
         email: Joi.string().email().required().trim(),
-        password: Joi.string().regex(/^[a-zA-Z0-9]{6, 32}$/).required().trim()
+        password: Joi.string().regex(/^[a-zA-Z0-9]{6,32}$/).required().trim()
     });
 
     const {error, value} = Joi.validate(req.body, schema);

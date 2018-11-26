@@ -29,17 +29,17 @@ const UserSchema = new Schema({
 
 }, {timestamps: true});
 
-UserSchema.pre('save', async (next)=>{
+UserSchema.pre('save', async function(next){
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
     next();
 });
 
-UserSchema.methods.validatePassword = async (password)=>{
+UserSchema.methods.validatePassword = async function(password){
     return await bcrypt.compare(password, this.password);
 }
  
-UserSchema.methods.responseObject = (/*flag = true*/)=>{
+UserSchema.methods.responseObject = function(/*flag = true*/){
     const {_id, first_name, last_name, email, createdAt, updatedAt} = this;
     const response = {_id, first_name, last_name, email, createdAt, updatedAt};
     // if(flag){

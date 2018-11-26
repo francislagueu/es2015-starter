@@ -23,7 +23,7 @@ import passport from 'passport';
         passport.authenticate('local', {session: false}, (err, user, info)=>{
             try{
                 if(err || !user){
-                    const errorMsg = new Error('An Error occured during login***');
+                    const errorMsg = new Error('An Error occurred during login***');
                     return next(errorMsg);
                 }
  
