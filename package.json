@@ -1,0 +1,29 @@
+{
+  "name": "es2015-starter",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/francislagueu/es2015-starter.git",
+  "author": "francislagueu <lagson6@yahoo.fr>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon ./server.js --exec babel-node -e js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "joi": "^14.3.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.13",
+    "nodemon": "^1.18.6",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "volleyball": "^1.5.1"
+  }
+}
